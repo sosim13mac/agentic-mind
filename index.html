@@ -3,41 +3,78 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Hanbill Blog</title>
+    <title>Hanbill Tech Blog (DB Connected)</title>
+    <!-- Supabase JS Library -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <style>
         :root { --primary-color: #004695; --text-color: #333; }
         body { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; line-height: 1.6; color: var(--text-color); margin: 0; padding: 0; background: #fafafa; }
         header { background: white; border-bottom: 1px solid #eee; padding: 2rem 1rem; text-align: center; }
         header h1 { margin: 0; color: var(--primary-color); font-size: 2.5rem; }
         .container { max-width: 800px; margin: 2rem auto; padding: 0 1rem; }
+        #posts-container { min-height: 200px; }
         article { background: white; padding: 2rem; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); margin-bottom: 2rem; }
         article h2 { margin-top: 0; color: var(--primary-color); }
         .meta { color: #999; font-size: 0.9rem; margin-bottom: 1rem; }
         footer { text-align: center; padding: 2rem; color: #999; font-size: 0.8rem; }
-        .btn { display: inline-block; padding: 0.5rem 1rem; background: var(--primary-color); color: white; text-decoration: none; border-radius: 4px; margin-top: 1rem; }
+        .loading { text-align: center; padding: 2rem; color: #999; }
     </style>
 </head>
 <body>
     <header>
         <h1>Hanbill Tech Blog</h1>
-        <p>세상을 바꾸는 전자고지결제 이야기</p>
+        <p>Supabase DB와 실시간 연동되는 블로그</p>
     </header>
     <div class="container">
-        <article>
-            <div class="meta">2026년 4월 6일</div>
-            <h2>블로그를 시작합니다!</h2>
-            <p>GitHub Pages를 이용한 한빌 테크 블로그의 첫 번째 포스팅입니다. 앞으로 이곳에서 다양한 기술 정보와 소식을 전해드리겠습니다.</p>
-            <a href="#" class="btn">더 읽기</a>
-        </article>
-        <article>
-            <div class="meta">2026년 4월 5일</div>
-            <h2>전자고지결제(EBPP)란 무엇인가?</h2>
-            <p>종이 고지서 없는 세상을 만드는 EBPP 서비스의 핵심 가치와 미래 전망에 대해 알아봅니다.</p>
-            <a href="#" class="btn">더 읽기</a>
-        </article>
+        <div id="posts-container">
+            <div class="loading">데이터를 불러오는 중...</div>
+        </div>
     </div>
     <footer>
-        &copy; 2026 Hanbill Blog. Powered by GitHub Pages.
+        &copy; 2026 Hanbill Blog. Powered by Supabase & GitHub Pages.
     </footer>
+
+    <script>
+        // Supabase 설정
+        const SUPABASE_URL = 'https://bdzgitzpbgdbvtygdtgq.supabase.co/';
+        const SUPABASE_KEY = 'sb_publishable_NpKAAlzpgwixnLMrozL6VA__CaK7fXM';
+        const supabase = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+
+        async function fetchPosts() {
+            const container = document.getElementById('posts-container');
+            
+            try {
+                const { data: posts, error } = await supabase
+                    .from('posts')
+                    .select('*')
+                    .order('created_at', { ascending: false });
+
+                if (error) throw error;
+
+                if (posts.length === 0) {
+                    container.innerHTML = '<div class="loading">아직 등록된 포스팅이 없습니다. DB에 데이터를 추가해 보세요!</div>';
+                    return;
+                }
+
+                container.innerHTML = '';
+                posts.forEach(post => {
+                    const date = new Date(post.created_at).toLocaleDateString('ko-KR');
+                    const article = document.createElement('article');
+                    article.innerHTML = `
+                        <div class="meta">${date}</div>
+                        <h2>${post.title}</h2>
+                        <p>${post.content}</p>
+                    `;
+                    container.appendChild(article);
+                });
+
+            } catch (err) {
+                console.error('Error fetching posts:', err);
+                container.innerHTML = '<div class="loading">데이터를 불러오는 데 실패했습니다.</div>';
+            }
+        }
+
+        fetchPosts();
+    </script>
 </body>
 </html>
