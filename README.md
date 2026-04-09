@@ -1,1 +1,1 @@
-# hanbill-blog
+# agentic-mind

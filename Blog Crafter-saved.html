@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>강북구 모텔 연쇄살인 사건의 전말</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&family=Playfair+Display:ital,wght@0,700;1,700&family=Pretendard:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            crimson: '#9b1c1c',
+                            charcoal: '#1a1a1a',
+                            bone: '#fcfcfc',
+                            slate: '#f1f5f9',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Pretendard', 'Noto Sans KR', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    },
+                    animation: {
+                        'fade-in': 'fadeIn 1.2s ease-out forwards',
+                        'slide-up': 'slideUp 0.8s ease-out forwards',
+                    },
+                    keyframes: {
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        },
+                        slideUp: {
+                            '0%': { transform: 'translateY(20px)', opacity: '0' },
+                            '100%': { transform: 'translateY(0)', opacity: '1' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #fcfcfc;
+            color: #1a1a1a;
+            -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+        .text-gradient {
+            background: linear-gradient(135deg, #1a1a1a 0%, #4a4a4a 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .image-reveal {
+            transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1), filter 0.7s ease;
+        }
+        .image-container:hover .image-reveal {
+            transform: scale(1.03);
+        }
+        .accent-line {
+            height: 2px;
+            width: 50px;
+            background-color: #9b1c1c;
+            margin-bottom: 1.5rem;
+        }
+        ::selection {
+            background: #9b1c1c;
+            color: white;
+        }
+    </style>
+</head>
+<body class="font-sans">
+
+    <!-- Header Section -->
+    <header class="relative w-full pt-24 pb-16 px-6 lg:pt-32 lg:pb-24 max-w-5xl mx-auto text-center animate-fade-in">
+        <div class="inline-block px-3 py-1 mb-6 text-xs font-semibold tracking-widest text-brand-crimson uppercase bg-red-50 border border-red-100 rounded-full">
+            Crime Report • 2026 Analysis
+        </div>
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-serif font-bold leading-tight md:leading-tight lg:leading-tight mb-8 text-charcoal">
+            강북구 모텔 연쇄살인 사건의 전말: <br class="hidden md:block" />
+            <span class="text-brand-crimson">20세 여성 사이코패스</span> 김소영의 충격적 범행
+        </h1>
+        <div class="flex items-center justify-center space-x-4 text-gray-500 text-sm font-medium">
+            <span>By Investigation Team</span>
+            <span class="w-1 h-1 bg-gray-300 rounded-full"></span>
+            <span>2026. 02. 15</span>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="max-w-screen-xl mx-auto px-6 lg:px-12 pb-32">
+        <article class="max-w-3xl mx-auto">
+            
+            <!-- Intro Paragraph -->
+            <div class="mb-12 text-lg md:text-xl leading-relaxed text-gray-700 animate-slide-up">
+                <p>
+                    2025년 하반기부터 2026년 2월까지 서울 강북구 일대 모텔에서 발생한 연쇄살인 사건이 한국 사회를 충격에 빠뜨렸습니다. 피의자는 2005년생, 당시 20세의 김소영으로, 연쇄살인범이 여성이고 피해자가 모두 남성인 점은 국내 범죄사에서 매우 이례적인 사례로 기록되었습니다.
+                </p>
+            </div>
+
+            <!-- Single Image: Intro Visual Break -->
+            <figure class="mb-16 image-container overflow-hidden rounded-2xl shadow-2xl animate-fade-in">
+                <div class="aspect-[16/9] bg-gray-100 overflow-hidden">
+                    <img src='https://opal.google/board/blobs/ab813806-579f-4b1f-843d-25a6633a82a0' alt='A close-up cinematic shot of a small brown glass bottle of a hangover drink next to a tablet showing a search result for lethal drug combinations' class="w-full h-full object-cover image-reveal" />
+                </div>
+                <figcaption class="mt-4 text-center text-sm text-gray-400 italic">
+                    피해자들을 유인하기 위해 사용된 약물과 치밀한 범행 준비의 흔적
+                </figcaption>
+            </figure>
+
+            <!-- Middle Text Sections -->
+            <div class="space-y-8 text-lg leading-relaxed text-gray-800 mb-16">
+                <div class="accent-line"></div>
+                <p>
+                    김소영의 범행 수법은 치밀하고 대담했습니다. 그녀는 주로 유흥업소나 술집에서 만난 남성들에게 접근하여, 함께 모텔에 투숙한 뒤 미리 준비한 향정신성의약품인 벤조디아제핀 계열의 약물을 숙취해소제나 음료에 타서 마시게 했습니다. 특히 피해자들이 술에 취한 상태에서 이 약물을 함께 복용할 경우 호흡곤란 등 치명적인 부작용을 일으킨다는 점을 악용한 것입니다.
+                </p>
+                <p>
+                    수사 과정에서 밝혀진 더욱 충격적인 사실은 그녀가 챗GPT(ChatGPT)를 통해 '수면제와 술을 함께 먹으면 얼마나 위험한지', '죽을 수도 있는지' 등을 미리 검색하며 범행의 위험성을 인지하고 있었다는 점입니다. 그녀의 범행 동기는 금전적 이득과 자신의 욕구 충족이었으며, 피해자가 사망한 직후에도 그들의 카드로 음식을 주문하거나 SNS에 셀카를 올리는 등 반사회적 인격장애(사이코패스)의 전형적인 모습을 보였습니다.
+                </p>
+            </div>
+
+            <!-- Responsive Grid for Images 2 and 3 -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16">
+                <figure class="image-container overflow-hidden rounded-xl shadow-lg">
+                    <div class="aspect-[4/5] bg-gray-200">
+                        <img src='https://opal.google/board/blobs/e988d3fe-8991-497e-afb7-26815c094a60' alt='A shadowy female figure sitting on a motel bed with a glowing smartphone' class="w-full h-full object-cover image-reveal" />
+                    </div>
+                    <figcaption class="mt-3 text-xs text-gray-400">범행 직후 죄책감 없이 SNS 활동을 이어간 가해자의 심리적 특성 재구성</figcaption>
+                </figure>
+                <figure class="image-container overflow-hidden rounded-xl shadow-lg md:mt-12">
+                    <div class="aspect-[4/5] bg-gray-200">
+                        <img src='https://opal.google/board/blobs/4ad379c7-71d4-4d56-9a74-d83f4a34c355' alt='Crime scene investigation table with evidence bags and police lights' class="w-full h-full object-cover image-reveal" />
+                    </div>
+                    <figcaption class="mt-3 text-xs text-gray-400">현장에서 수거된 증거물과 가해자의 소지품들</figcaption>
+                </figure>
+            </div>
+
+            <!-- Conclusion -->
+            <div class="text-lg leading-relaxed text-gray-800 bg-brand-slate p-8 md:p-12 rounded-3xl border border-gray-100">
+                <p>
+                    경찰의 사이코패스 진단 결과, 그녀는 고득점을 기록하며 사이코패스로 판정되었습니다. 처음에는 신상 비공개 결정으로 논란이 일기도 했으나, 유족의 강력한 요청과 범죄의 중대성을 고려해 결국 21세기 출생 여성 최초로 신상이 공개되었습니다. 이 사건은 우리 사회에 향정신성의약품 관리의 허술함과 온라인을 통한 무분별한 만남의 위험성을 다시 한번 경고하고 있습니다.
+                </p>
+            </div>
+
+        </article>
+    </main>
+
+    <!-- Decorative Progress Bar -->
+    <div class="fixed top-0 left-0 w-full h-1 z-50">
+        <div id="progress" class="h-full bg-brand-crimson w-0 transition-all duration-150"></div>
+    </div>
+
+    <script>
+        window.onscroll = function() {
+            var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            var scrolled = (winScroll / height) * 100;
+            document.getElementById("progress").style.width = scrolled + "%";
+        };
+    </script>
+</body>
+</html>
